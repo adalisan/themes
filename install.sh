@@ -2,10 +2,10 @@
 set -e
 
 # Pulling recent updates from the upstream and check for changes
-#git pull github master
+git pull github master
 
 # Pulling all the recent updates from all the submodules
-#git submodule foreach git pull origin master
+git submodule foreach git pull origin master
 
 # Find the location of the script, this brings out the location of the current directory
 SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
