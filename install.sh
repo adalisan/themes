@@ -17,22 +17,36 @@ SOURCE_LOCATION="$SCRIPT_DIRECTORY" # Contains the files and directories I want 
 mkdir -p iTerm_themes
 mkdir -p Terminal_themes
 
-echo "\n Checking iTerm colors \n"
+echo "\n ============================================
+            Checking iTerm colors
+ ============================================ \n"
 
 # Copy all the .itermcolors into its specific folder
 find $SOURCE_LOCATION -name '*.itermcolors'| while read file; do
 	if [[ ! -f "$SOURCE_LOCATION/iTerm_themes/$(basename "$file")" ]]; then
 		echo "Linking theme file $(basename "$file")"
 		ln -s "$file" "$SOURCE_LOCATION/iTerm_themes"
+	else
+		echo "$(basename "$file") has been already linked!"
 	fi
 done
 
-echo "\n Checking Terminal colors \n"
+echo "\n ============================================
+            Checking Terminal colors
+ ============================================ \n"
 
 # Copy all the .terminal colors into its specific folder
 find $SOURCE_LOCATION -name '*.terminal'| while read file; do
-		if [[ ! -f "$SOURCE_LOCATION/Terminal_themes/$(basename "$file")" ]]; then
+	if [[ ! -f "$SOURCE_LOCATION/Terminal_themes/$(basename "$file")" ]]; then
 		echo "Linking theme file $(basename "$file")"
 		ln -s "$file" "$SOURCE_LOCATION/Terminal_themes"
+	else
+		echo "$(basename "$file") has been already linked!"
 	fi
 done
+
+read -p "\n Enter a iTerm2 theme name to apply it (s/skip):";
+echo "";
+if [[ ! $REPLY =~ ^[sS]$ ]]; then
+	open "$SOURCE_LOCATION/iTerm_themes/$REPLY.itermcolors"
+fi;
