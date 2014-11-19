@@ -14,8 +14,8 @@ SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SOURCE_LOCATION="$SCRIPT_DIRECTORY" # Contains the files and directories I want to work with.
 
 # create if not exist the directories to hold the iTerm and terminal colors
-mkdir -p iTerm_themes
-mkdir -p Terminal_themes
+mkdir -p iTerm
+mkdir -p Terminal
 
 echo "\n ============================================
             Checking iTerm colors
@@ -23,9 +23,9 @@ echo "\n ============================================
 
 # Copy all the .itermcolors into its specific folder
 find $SOURCE_LOCATION -name '*.itermcolors'| while read file; do
-	if [[ ! -f "$SOURCE_LOCATION/iTerm_themes/$(basename "$file")" ]]; then
+	if [[ ! -f "$SOURCE_LOCATION/iTerm/$(basename "$file")" ]]; then
 		echo "Linking theme file $(basename "$file")"
-		ln -s "$file" "$SOURCE_LOCATION/iTerm_themes"
+		ln -s "$file" "$SOURCE_LOCATION/iTerm"
 	else
 		echo "$(basename "$file") has been already linked!"
 	fi
@@ -37,16 +37,16 @@ echo "\n ============================================
 
 # Copy all the .terminal colors into its specific folder
 find $SOURCE_LOCATION -name '*.terminal'| while read file; do
-	if [[ ! -f "$SOURCE_LOCATION/Terminal_themes/$(basename "$file")" ]]; then
+	if [[ ! -f "$SOURCE_LOCATION/Terminal/$(basename "$file")" ]]; then
 		echo "Linking theme file $(basename "$file")"
-		ln -s "$file" "$SOURCE_LOCATION/Terminal_themes"
+		ln -s "$file" "$SOURCE_LOCATION/Terminal"
 	else
 		echo "$(basename "$file") has been already linked!"
 	fi
 done
 
-read -p "\n Enter a iTerm2 theme name to apply it (s/skip):";
+read -p "Enter a iTerm2 theme name to apply it (s/skip):";
 echo "";
 if [[ ! $REPLY =~ ^[sS]$ ]]; then
-	open "$SOURCE_LOCATION/iTerm_themes/$REPLY.itermcolors"
+	open "$SOURCE_LOCATION/iTerm/$REPLY.itermcolors"
 fi;
