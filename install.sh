@@ -11,9 +11,9 @@ echo "\n ============================================
 
 # Copy all the .itermcolors into its specific folder
 find $SOURCE_LOCATION -name '*.itermcolors'| while read file; do
-	if [[ ! -f "$SOURCE_LOCATION/iTerm/$(basename "$file")" ]]; then
+	if [[ ! -f "$SOURCE_LOCATION/Themes/iTerm/$(basename "$file")" ]]; then
 		echo "Linking theme file $(basename "$file")"
-		ln -s "$file" "$SOURCE_LOCATION/iTerm"
+		ln -s "$file" "$SOURCE_LOCATION/Themes/iTerm"
 	else
 		echo "$(basename "$file") has been already linked!"
 	fi
@@ -23,7 +23,7 @@ echo ""
 read -p "Enter a iTerm2 theme name to apply it (s/skip):";
 echo "";
 if [[ ! $REPLY =~ ^[sS]$ ]]; then
-	open "$SOURCE_LOCATION/iTerm/$REPLY.itermcolors"
+	open "$SOURCE_LOCATION/Themes/iTerm/$REPLY.itermcolors"
 fi;
 
 echo "\n ============================================
@@ -32,9 +32,9 @@ echo "\n ============================================
 
 # Copy all the .terminal colors into its specific folder
 find $SOURCE_LOCATION -name '*.terminal'| while read file; do
-	if [[ ! -f "$SOURCE_LOCATION/Terminal/$(basename "$file")" ]]; then
+	if [[ ! -f "$SOURCE_LOCATION/Themes/Terminal/$(basename "$file")" ]]; then
 		echo "Linking theme file $(basename "$file")"
-		ln -s "$file" "$SOURCE_LOCATION/Terminal"
+		ln -s "$file" "$SOURCE_LOCATION/Themes/Terminal"
 	else
 		echo "$(basename "$file") has been already linked!"
 	fi
@@ -44,6 +44,6 @@ echo ""
 read -p "Enter a Termnail theme name to apply it (s/skip):";
 echo "";
 if [[ ! $REPLY =~ ^[sS]$ ]]; then
-	open "$SOURCE_LOCATION/Terminal/$REPLY.terminal"
+	open "$SOURCE_LOCATION/Themes/Terminal/$REPLY.terminal"
 fi;
 
