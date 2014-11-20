@@ -1,18 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-# Pulling recent updates from the upstream and check for changes
-git pull github master
-
-# Pulling all the recent updates from all the submodules
-git submodule foreach git pull origin master
-
-# Find the location of the script, this brings out the location of the current directory
-SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-# The source directory and target directories.
-SOURCE_LOCATION="$SCRIPT_DIRECTORY" # Contains the files and directories I want to work with.
-
 # create if not exist the directories to hold the iTerm and terminal colors
 mkdir -p iTerm
 mkdir -p Terminal
