@@ -19,6 +19,7 @@ find $SOURCE_LOCATION -name '*.itermcolors'| while read file; do
 	fi
 done
 
+echo ""
 read -p "Enter a iTerm2 theme name to apply it (s/skip):";
 echo "";
 if [[ ! $REPLY =~ ^[sS]$ ]]; then
@@ -39,6 +40,7 @@ find $SOURCE_LOCATION -name '*.terminal'| while read file; do
 	fi
 done
 
+echo ""
 read -p "Enter a Termnail theme name to apply it (s/skip):";
 echo "";
 if [[ ! $REPLY =~ ^[sS]$ ]]; then
