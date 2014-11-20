@@ -2,15 +2,15 @@
 set -e
 
 # create if not exist the directories to hold the iTerm and terminal colors
-mkdir -p iTerm
-mkdir -p Terminal
+mkdir -p "$SOURCE_LOCATION/Themes/iTerm"
+mkdir -p "$SOURCE_LOCATION/Themes/Terminal"
 
 echo "\n ============================================
             Checking iTerm colors
  ============================================ \n"
 
 # Copy all the .itermcolors into its specific folder
-find $SOURCE_LOCATION -name '*.itermcolors'| while read file; do
+find "$SOURCE_LOCATION/Themes" -name '*.itermcolors'| while read file; do
 	if [[ ! -f "$SOURCE_LOCATION/Themes/iTerm/$(basename "$file")" ]]; then
 		echo "Linking theme file $(basename "$file")"
 		ln -s "$file" "$SOURCE_LOCATION/Themes/iTerm"
@@ -31,7 +31,7 @@ echo "\n ============================================
  ============================================ \n"
 
 # Copy all the .terminal colors into its specific folder
-find $SOURCE_LOCATION -name '*.terminal'| while read file; do
+find "$SOURCE_LOCATION/Themes" -name '*.terminal'| while read file; do
 	if [[ ! -f "$SOURCE_LOCATION/Themes/Terminal/$(basename "$file")" ]]; then
 		echo "Linking theme file $(basename "$file")"
 		ln -s "$file" "$SOURCE_LOCATION/Themes/Terminal"
