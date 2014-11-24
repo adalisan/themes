@@ -1,5 +1,5 @@
 
-This repository is an aggregation of Terminal and iTerm2 color schemes. 
+This repository is an aggregation of **Terminal** and **iTerm** color schemes. 
 
 The `sources` folder contain the following themes repositories fetched:
 
