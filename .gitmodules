@@ -13,3 +13,9 @@
 [submodule "Tomorrow-Theme"]
 	path = Sources/Tomorrow-Theme
 	url = 	https://github.com/ChrisKempson/Tomorrow-Theme
+
+[submodule "dracula-theme"]
+	path = Sources/dracula-theme
+	url = https://github.com/zenorocha/dracula-theme
+
+
