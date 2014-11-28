@@ -29,6 +29,7 @@ The `sources` folder contain the following themes repositories fetched:
 - [Flat-terminal](https://github.com/ahmetsulek/flat-terminal)
 - [iTerm2-color-schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
 - [Solarized](https://github.com/altercation/solarized)
+- [Dracula](https://github.com/zenorocha/dracula-theme)
 
 The repositories integrated are defined as submodules and the themes are extracted, aggregated and classified into two folder: `terminal` for terminal specific themes and `iTerm` for iTerm themes.
 
