@@ -18,4 +18,8 @@
 	path = Sources/dracula-theme
 	url = https://github.com/zenorocha/dracula-theme
 
+[submodule "cobalt-2"]
+	path = Sources/cobalt-2
+	url = https://github.com/wesbos/Cobalt2-iterm
+
 
