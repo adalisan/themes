@@ -1,25 +1,31 @@
 [submodule "iTerm2-Color-Schemes"]
 	path = Sources/iTerm2-Color-Schemes
 	url = https://github.com/mbadolato/iTerm2-Color-Schemes
+	ignore = dirty
 
 [submodule "solarized"]
 	path = Sources/solarized
 	url = https://github.com/altercation/solarized
+	ignore = dirty
 
 [submodule "flat-terminal"]
 	path = Sources/flat-terminal
 	url = 	https://github.com/ahmetsulek/flat-terminal
+	ignore = dirty
 
 [submodule "Tomorrow-Theme"]
 	path = Sources/Tomorrow-Theme
 	url = 	https://github.com/ChrisKempson/Tomorrow-Theme
+	ignore = dirty
 
 [submodule "dracula-theme"]
 	path = Sources/dracula-theme
 	url = https://github.com/zenorocha/dracula-theme
+	ignore = dirty
 
 [submodule "cobalt-2"]
 	path = Sources/cobalt-2
 	url = https://github.com/wesbos/Cobalt2-iterm
+	ignore = dirty
 
 
